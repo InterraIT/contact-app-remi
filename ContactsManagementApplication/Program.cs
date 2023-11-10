@@ -1,5 +1,6 @@
 using ContactsManagementApplication.Repositories;
 using ContactsManagementApplication.Services;
+using ContactsManagementApplication.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+//Error handler middleware
+app.UseMiddleware(typeof(ApiExceptionMiddleware));
 
 app.UseHttpsRedirection();
 
