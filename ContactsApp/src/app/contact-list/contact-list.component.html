@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-6 text-right">
+    <button class="btn btn-success" (click)="openAddEditPopup(null)">
+      Add
+    </button>
+  </div>
+</div>
+
+<hr />
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of contactList">
+      <td>{{ contact.id }}</td>
+      <td>{{ contact.firstName }}</td>
+      <td>{{ contact.lastName }}</td>
+      <td>{{ contact.email }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="openAddEditPopup(contact)">
+          Edit
+        </button>
+      </td>
+      <td>
+        <button
+          class="btn btn-danger"
+          (click)="openDeleteConfirmation(contact)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #deleteUserModal let-modal>
+  <app-delete-contact
+    (confirmDeleteEvent)="deleteContact()"
+    (closeModalEvent)="closeDeleteConfirmation()"
+  ></app-delete-contact>
+</ng-template>
