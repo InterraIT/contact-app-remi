@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "tjWqj0P+2f6e8fvZoYkj9AifHnkAgnZmp6bM5I1AacGBq2WB9/OUiADUZMN4/J/EkfzbammvqEUKS7eUdgtJdw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\RemiS\\Documents\\dev\\test-project\\ContactsManagementApplication\\ContactsManagementApplication\\ContactsManagementApplication.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\RemiS\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\RemiS\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\RemiS\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\RemiS\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\RemiS\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\RemiS\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
