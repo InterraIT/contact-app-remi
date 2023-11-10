@@ -7,3 +7,12 @@
 
   <app-contact-list></app-contact-list>
 </div>
+<div class="toastr-container">
+  <ng-container *ngIf="toastrData?.text?.length > 0">
+    <app-custom-toastr
+      [@toastrAnimation]
+      [toastrData]="toastrData"
+      (closeAction)="closeAction($event)"
+    ></app-custom-toastr>
+  </ng-container>
+</div>

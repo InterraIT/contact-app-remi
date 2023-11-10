@@ -3,6 +3,7 @@ import { Contact } from '../contact.model';
 import { DataService } from '../data.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { AddEditUserComponent } from '../add-edit-user/add-edit-user.component';
+import { CustomToastrService } from '../services/custom-toastr.service';
 
 @Component({
   selector: 'app-contact-list',
@@ -18,7 +19,8 @@ export class ContactListComponent implements OnInit {
 
   constructor(
     private contactService: DataService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private toastr: CustomToastrService
   ) {}
 
   ngOnInit(): void {
@@ -40,12 +42,16 @@ export class ContactListComponent implements OnInit {
     modalRef.componentInstance.onSave.subscribe((updatedContact: Contact) => {
       if (updatedContact.id) {
         this.contactService.updateContact(updatedContact).subscribe((res) => {
-          console.log(res);
+          if (res) {
+            this.toastr.success('Contact is updated successfully!');
+          }
           this.getContacts();
         });
       } else {
         this.contactService.insertContact(updatedContact).subscribe((res) => {
-          console.log(res);
+          if (res) {
+            this.toastr.success('Contact is added successfully!');
+          }
           this.getContacts();
         });
       }
@@ -65,7 +71,9 @@ export class ContactListComponent implements OnInit {
     this.contactService
       .deleteContact(this.selectedContact?.id)
       .subscribe((res) => {
-        console.log(res);
+        if (res) {
+          this.toastr.success('Contact is deleted successfully!');
+        }
         this.getContacts();
       });
     this.closeDeleteConfirmation();
