@@ -1,0 +1,8 @@
+table tr:hover td {
+    background: #efefef;
+    cursor: pointer;
+}
+
+.row-selected td {
+    background: lightblue;
+}

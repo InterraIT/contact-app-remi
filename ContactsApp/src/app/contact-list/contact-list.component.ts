@@ -16,6 +16,7 @@ export class ContactListComponent implements OnInit {
   modalRef!: NgbModalRef;
 
   @ViewChild('deleteUserModal') deleteUserModal!: TemplateRef<any>;
+  isVisible: boolean = false;
 
   constructor(
     private contactService: DataService,
@@ -77,5 +78,10 @@ export class ContactListComponent implements OnInit {
         this.getContacts();
       });
     this.closeDeleteConfirmation();
+  }
+
+  viewContact(contact: Contact): void {
+    this.isVisible = true;
+    this.selectedContact = contact;
   }
 }

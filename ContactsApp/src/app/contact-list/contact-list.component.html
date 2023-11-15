@@ -19,7 +19,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let contact of contactList">
+    <tr
+      *ngFor="let contact of contactList"
+      (click)="viewContact(contact)"
+      [ngClass]="{
+        'row-selected':
+          selectedContact && contact.id === selectedContact.id && isVisible
+      }"
+    >
       <td>{{ contact.id }}</td>
       <td>{{ contact.firstName }}</td>
       <td>{{ contact.lastName }}</td>
@@ -46,3 +53,8 @@
     (closeModalEvent)="closeDeleteConfirmation()"
   ></app-delete-contact>
 </ng-template>
+
+<app-view-contact
+  *ngIf="isVisible"
+  [contact]="selectedContact"
+></app-view-contact>

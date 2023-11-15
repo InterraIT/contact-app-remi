@@ -11,6 +11,7 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { AddEditUserComponent } from './add-edit-user/add-edit-user.component';
 import { DeleteContactComponent } from './delete-contact/delete-contact.component';
 import { CustomToastrComponent } from './custom-toastr/custom-toastr.component';
+import { ViewContactComponent } from './view-contact/view-contact.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CustomToastrComponent } from './custom-toastr/custom-toastr.component';
     AddEditUserComponent,
     DeleteContactComponent,
     CustomToastrComponent,
+    ViewContactComponent,
   ],
   imports: [
     BrowserModule,
